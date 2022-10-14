@@ -1,14 +1,12 @@
 package com.mindtree.PYT.Repositories;
 
+import com.mindtree.PYT.Entities.Flight;
+import com.mindtree.PYT.Entities.User;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public interface FlightRepository {
-    Flights addFlight(int FlightId,String Location, HashMap<String,String> DestinationCostMap);
+public interface FlightRepository extends MongoRepository<Flight,Long> {
 
-    Flights updateFlight(int FlightId,String Location, HashMap<String,String> DestinationCostMap);
-
-    Flights deleteFlight(int FlightId);
-
-    ArrayList<Flights> viewAllFlights();
 }

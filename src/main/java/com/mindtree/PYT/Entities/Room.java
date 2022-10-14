@@ -1,11 +1,11 @@
-package com.mindtree.PYT.Repositories;
+package com.mindtree.PYT.Entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class Rooms {
+public class Room {
 
     @Id
     private int roomNo;
@@ -15,10 +15,10 @@ public class Rooms {
     private double roomRent;
 
 
-    public Rooms() {
+    public Room() {
     }
 
-    public Rooms(int roomNo, String roomType, double roomRent) {
+    public Room(int roomNo, String roomType, double roomRent) {
         this.roomNo = roomNo;
         this.roomType = roomType;
 

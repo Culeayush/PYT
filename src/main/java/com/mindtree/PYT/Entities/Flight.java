@@ -1,19 +1,18 @@
-package com.mindtree.PYT.Repositories;
+package com.mindtree.PYT.Entities;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 @Repository
-public class Flights {
+public class Flight {
     private int FlightId;
     private String  Location;
     private HashMap<String,String> DestinationCostMap;
 
-    public Flights() {
+    public Flight() {
     }
 
-    public Flights(int FlightId,String location, HashMap<String, String> destinationCostMap) {
+    public Flight(int FlightId, String location, HashMap<String, String> destinationCostMap) {
         FlightId = FlightId;
         Location = location;
         DestinationCostMap = destinationCostMap;
