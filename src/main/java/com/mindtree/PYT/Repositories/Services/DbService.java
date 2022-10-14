@@ -1,4 +1,4 @@
-package com.mindtree.PYT.Services;
+package com.mindtree.PYT.Repositories.Services;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;

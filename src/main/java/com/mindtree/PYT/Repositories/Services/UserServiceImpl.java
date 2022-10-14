@@ -1,4 +1,4 @@
-package com.mindtree.PYT.Services;
+package com.mindtree.PYT.Repositories.Services;
 
 import com.mindtree.PYT.Entities.User;
 import com.mindtree.PYT.Repositories.UserRepository;
@@ -24,17 +24,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Optional<User> getUserById(String userID) {
+    public Optional<User> getUserById(long userID) {
         return userRepository.findById(userID);
     }
 
     @Override
-    public void updateUser(String userID, User user) {
+    public void updateUser(long userID, User user) {
         userRepository.save(user);
     }
 
     @Override
-    public void deleteUser(User user) {
-        userRepository.delete(user);
+    public void deleteUser(long user) {
+        userRepository.deleteById(user);
     }
 }

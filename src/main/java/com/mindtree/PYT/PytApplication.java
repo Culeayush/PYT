@@ -27,8 +27,8 @@ public class PytApplication implements CommandLineRunner {
 //			userRepository.save(new User(001L,"ayush",true,"sfsgf"));
 //			userRepository.save(new User(002L,"peter",true,"sfsgf"));
 //		}
-		for(User user: userRepository.findAll())
-			System.out.println(user);
+//		for(User user: userRepository.findAll())
+//			System.out.println(user);
 	}
 
 }

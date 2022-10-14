@@ -1,4 +1,4 @@
-package com.mindtree.PYT.Services;
+package com.mindtree.PYT.Repositories.Services;
 
 import com.mindtree.PYT.Entities.User;
 
@@ -11,10 +11,10 @@ public interface UserService {
 
     List<User> getAllUser();
 
-    Optional<User> getUserById(String userID);
+    Optional<User> getUserById(long userID);
 
-    void updateUser(String userID, User user);
+    void updateUser(long userID, User user);
 
-    void deleteUser(User userID);
+    void deleteUser(long userID);
 
 }
