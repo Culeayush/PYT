@@ -38,6 +38,17 @@ public class RoomController {
 
     }
 
+    @GetMapping("/getAvailable")
+    public List<Room> getAvailableRooms(){
+        try{
+            return this.roomService.getAllAvailableRooms();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+    }
+
     @GetMapping("/get/{roomId}")
     public Optional<Room> getInventoryById(@PathVariable long roomId) {
         try {

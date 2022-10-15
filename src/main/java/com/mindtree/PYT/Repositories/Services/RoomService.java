@@ -11,6 +11,8 @@ public interface RoomService {
 
     List<Room> getAllRoom();
 
+    List<Room> getAllAvailableRooms();
+
     Optional<Room> getRoomById(long roomId);
 
     void updateRoom(long roomId,Room room);
