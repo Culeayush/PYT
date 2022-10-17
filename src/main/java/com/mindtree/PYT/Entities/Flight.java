@@ -1,12 +1,17 @@
 package com.mindtree.PYT.Entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 @Repository
 public class Flight {
+    @Id
     private int FlightId;
+    @Field
     private String  Location;
+    @Field
     private HashMap<String,String> DestinationCostMap;
 
     public Flight() {
