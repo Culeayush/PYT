@@ -5,10 +5,12 @@ import com.mindtree.PYT.Repositories.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -48,6 +50,24 @@ public class UserController {
             return Optional.empty();
         }
 
+    }
+
+    @PostMapping("/getByEmail")
+    public Optional<User> getUserByUserEmail(@RequestBody User bUser){
+        try {
+            User user = new User();
+            List<User> userList = this.userService.getAllUser();
+            for(User u : userList){
+                System.out.println("USERNAME FROM API : "+u.getUserName()+"  "+bUser.getUserName());
+                if(Objects.equals(u.getUserName(), bUser.getUserName())){
+                    user = u;
+                }
+            }
+            return Optional.of(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
     }
 
     @PutMapping("/update/{userID}")

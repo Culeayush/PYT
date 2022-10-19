@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
-import java.util.Optional;
 
 @Document(collection = "Rooms")
 public class Room {
@@ -23,7 +22,7 @@ public class Room {
     @NotNull(message="Room rent cannot be null")
     private double roomRent;
     @Field
-    private boolean isAvailable;
+    private boolean available;
     @Field
     private Date checkOut;
 
@@ -33,12 +32,12 @@ public class Room {
     public Room(@NotNull(message="Room ID cannot be null") @Size(min=4,message="Room ID should be minimum 4 digits")long roomId
             ,@NotNull(message="Hotel name cannot be null") @Size(min=8,message="Hotel name should be minimum 8 digits") String hotelName
             ,@NotNull(message="Room rent cannot be null") double roomRent
-            ,boolean isAvailable
+            ,boolean available
             ,Date checkOut) {
         this.roomId = roomId;
         this.hotelName = hotelName;
         this.roomRent = roomRent;
-        this.isAvailable = isAvailable;
+        this.available = available;
         this.checkOut = checkOut;
     }
 
@@ -67,11 +66,11 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
     public void setAvailable(boolean available) {
-        isAvailable = available;
+        this.available = available;
     }
 
     public Date getCheckOut() {
@@ -85,9 +84,11 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" +
-                "roomNo=" + roomId +
+                "roomId=" + roomId +
                 ", hotelName='" + hotelName + '\'' +
                 ", roomRent=" + roomRent +
+                ", available=" + available +
+                ", checkOut=" + checkOut +
                 '}';
     }
 }
