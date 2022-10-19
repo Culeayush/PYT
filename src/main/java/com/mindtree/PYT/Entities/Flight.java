@@ -18,7 +18,7 @@ public class Flight {
     public Flight() {
     }
 
-    public Flight(int flightId, String location, HashMap<String, String> destinationCostMap) {
+    public Flight(long flightId, String location, HashMap<String, String> destinationCostMap) {
         this.flightId = flightId;
         this.location = location;
         this.destinationCostMap = destinationCostMap;

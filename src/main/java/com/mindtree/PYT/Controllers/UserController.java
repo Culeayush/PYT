@@ -1,11 +1,10 @@
 package com.mindtree.PYT.Controllers;
 
 import com.mindtree.PYT.Entities.User;
-import com.mindtree.PYT.Repositories.Services.UserService;
+import com.mindtree.PYT.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;

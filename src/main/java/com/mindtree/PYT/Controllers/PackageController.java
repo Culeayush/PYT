@@ -1,9 +1,7 @@
 package com.mindtree.PYT.Controllers;
 
 import com.mindtree.PYT.Entities.Package;
-import com.mindtree.PYT.Entities.Room;
-import com.mindtree.PYT.Repositories.Services.PackageService;
-import com.mindtree.PYT.Repositories.Services.RoomService;
+import com.mindtree.PYT.Services.PackageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

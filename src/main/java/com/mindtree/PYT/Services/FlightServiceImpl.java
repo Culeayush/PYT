@@ -1,4 +1,4 @@
-package com.mindtree.PYT.Repositories.Services;
+package com.mindtree.PYT.Services;
 
 import com.mindtree.PYT.Entities.Flight;
 import com.mindtree.PYT.Repositories.FlightRepository;

@@ -1,7 +1,7 @@
 package com.mindtree.PYT.Controllers;
 
 import com.mindtree.PYT.Entities.Flight;
-import com.mindtree.PYT.Repositories.Services.FlightService;
+import com.mindtree.PYT.Services.FlightService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

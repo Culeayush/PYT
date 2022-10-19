@@ -14,10 +14,8 @@ public class Package {
     @Field
     private String packageName;
     @Field
-    @Autowired
     private Flight flight;
     @Field
-    @Autowired
     private Room room;
     @Field
     private String packageCost;

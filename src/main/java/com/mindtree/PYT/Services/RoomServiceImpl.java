@@ -1,4 +1,4 @@
-package com.mindtree.PYT.Repositories.Services;
+package com.mindtree.PYT.Services;
 
 import com.mindtree.PYT.Entities.Room;
 import com.mindtree.PYT.Repositories.RoomRepository;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class RoomServiceImpl implements RoomService{

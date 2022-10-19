@@ -1,4 +1,4 @@
-package com.mindtree.PYT.Repositories.Services;
+package com.mindtree.PYT.Services;
 
 import com.mindtree.PYT.Entities.User;
 import com.mindtree.PYT.Repositories.UserRepository;
