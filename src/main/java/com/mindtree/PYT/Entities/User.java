@@ -25,6 +25,9 @@ public class User {
     @Size(min=8,message="Password should be at least 8 digits")
     private String userPassword;
 
+    @Field
+    private Bookings bookings;
+
     public User() {
     }
 

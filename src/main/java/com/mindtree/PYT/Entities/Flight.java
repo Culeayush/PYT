@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 @Document(collection = "Flights")
 public class Flight {
@@ -13,15 +14,19 @@ public class Flight {
     @Field
     private String location;
     @Field
-    private HashMap<String,String> destinationCostMap;
+    private ArrayList<String> destinations;
+
+    @Field
+    private ArrayList<Integer> costs;
 
     public Flight() {
     }
 
-    public Flight(long flightId, String location, HashMap<String, String> destinationCostMap) {
+    public Flight(long flightId, String location, ArrayList<String> destinations, ArrayList<Integer> costs) {
         this.flightId = flightId;
         this.location = location;
-        this.destinationCostMap = destinationCostMap;
+        this.destinations = destinations;
+        this.costs = costs;
     }
 
     public long getFlightId() {
@@ -40,12 +45,20 @@ public class Flight {
         this.location = location;
     }
 
-    public HashMap<String, String> getDestinationCostMap() {
-        return destinationCostMap;
+    public ArrayList<String> getDestinations() {
+        return destinations;
     }
 
-    public void setDestinationCostMap(HashMap<String, String> destinationCostMap) {
-        this.destinationCostMap = destinationCostMap;
+    public void setDestinations(ArrayList<String> destinations) {
+        this.destinations = destinations;
+    }
+
+    public ArrayList<Integer> getCosts() {
+        return costs;
+    }
+
+    public void setCosts(ArrayList<Integer> costs) {
+        this.costs = costs;
     }
 
     @Override
@@ -53,7 +66,8 @@ public class Flight {
         return "Flight{" +
                 "flightId=" + flightId +
                 ", location='" + location + '\'' +
-                ", destinationCostMap=" + destinationCostMap +
+                ", destinations=" + destinations +
+                ", costs=" + costs +
                 '}';
     }
 }

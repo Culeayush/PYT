@@ -30,12 +30,7 @@ public class PytApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		HashMap<String, String> dcMap = new HashMap<>();
-		dcMap.put("India","1000");
-		dcMap.put("Nepal","6000");
-		Flight f = new Flight(2005L,"location",dcMap);
-		Room r = new Room(1006L,"hotel",10000,true,new Date());
-		packageRepository.save(new Package(1001L,"SEX PACKAGE",f,r,"1000"));
+
 
 	}
 
