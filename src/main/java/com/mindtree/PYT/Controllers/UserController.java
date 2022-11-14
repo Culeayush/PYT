@@ -1,5 +1,6 @@
 package com.mindtree.PYT.Controllers;
 
+import com.mindtree.PYT.Entities.Bookings;
 import com.mindtree.PYT.Entities.User;
 import com.mindtree.PYT.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,5 +93,38 @@ public class UserController {
         }
     }
 
+    @PostMapping("/addBooking/{userID}")
+    public String addBooking(@PathVariable long userID, @RequestBody Bookings bookings){
+        try{
+            this.userService.addBooking(userID,bookings);
+            return "User added : "+bookings;
+        }
+        catch(Exception e){
+            System.out.println(e);
+            return "Use Valid Input";
+        }
+    }
+
+    @GetMapping("/getBooking/{userID}")
+    public Optional<Bookings> getAllBooking(@PathVariable long userID){
+        try {
+            return this.userService.getAllBookings(userID);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
+    }
+
+    @DeleteMapping("/deleteBooking/{userID}")
+    public String deleteBooking(@PathVariable long userID){
+        try{
+            this.userService.deleteBookingById(userID);
+            return "Booking Deleted : "+userID;
+        }
+        catch (Exception e){
+            System.out.println(e);
+            return "invalid user ID";
+        }
+    }
 
 }

@@ -3,10 +3,8 @@ package com.mindtree.PYT.Entities;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 @Document(collection = "Flights")
 public class Flight {
     @Id

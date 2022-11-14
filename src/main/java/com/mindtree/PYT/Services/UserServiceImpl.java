@@ -1,5 +1,6 @@
 package com.mindtree.PYT.Services;
 
+import com.mindtree.PYT.Entities.Bookings;
 import com.mindtree.PYT.Entities.User;
 import com.mindtree.PYT.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,5 +37,27 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteUser(long user) {
         userRepository.deleteById(user);
+    }
+
+    @Override
+    public void addBooking(long userID, Bookings bookings) {
+        User u = userRepository.findById(userID).get();
+        u.setBookings(bookings);
+        userRepository.save(u);
+    }
+
+    @Override
+    public Optional<Bookings> getAllBookings(long userID) {
+        User u = userRepository.findById(userID).get();
+        if (u.getBookings()==null)
+            return Optional.empty();
+        else
+            return Optional.of(u.getBookings());
+    }
+
+    @Override
+    public void deleteBookingById(long userID) {
+        User u = userRepository.findById(userID).get();
+        u.setBookings(null);
     }
 }

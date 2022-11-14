@@ -28,6 +28,7 @@ public class User {
     @Field
     private Bookings bookings;
 
+
     public User() {
     }
 
@@ -74,13 +75,22 @@ public class User {
         this.userPassword = userPassword;
     }
 
+    public Bookings getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(Bookings bookings) {
+        this.bookings = bookings;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "userID='" + userID + '\'' +
+                "userID=" + userID +
                 ", userName='" + userName + '\'' +
                 ", admin=" + admin +
                 ", userPassword='" + userPassword + '\'' +
+                ", bookings=" + bookings +
                 '}';
     }
 }
