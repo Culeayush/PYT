@@ -1,46 +1,55 @@
 package com.mindtree.PYT.Entities;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.util.ArrayList;
-
 public class Bookings {
     @Id
-    private long bookingId;
+    private long packageID;
     @Field
-    private ArrayList<Package> pkg;
+    private String packageName;
+    @Field
+    private String packageCost;
 
     public Bookings() {
     }
 
-    public Bookings(long bookingId, ArrayList<Package> pkg) {
-        this.bookingId = bookingId;
-        this.pkg = pkg;
+    public Bookings(long packageID, String packageName, String packageCost) {
+        this.packageID = packageID;
+        this.packageName = packageName;
+        this.packageCost = packageCost;
     }
 
-    public long getBookingId() {
-        return bookingId;
+    public long getPackageID() {
+        return packageID;
     }
 
-    public void setBookingId(long bookingId) {
-        this.bookingId = bookingId;
+    public void setPackageID(long packageID) {
+        this.packageID = packageID;
     }
 
-    public ArrayList<Package> getPkg() {
-        return pkg;
+    public String getPackageName() {
+        return packageName;
     }
 
-    public void setPkg(Package pkg) {
-        this.pkg.add(pkg);
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    public String getPackageCost() {
+        return packageCost;
+    }
+
+    public void setPackageCost(String packageCost) {
+        this.packageCost = packageCost;
     }
 
     @Override
     public String toString() {
         return "Bookings{" +
-                "bookingId=" + bookingId +
-                ", pkg=" + pkg +
+                "packageID=" + packageID +
+                ", packageNam='" + packageName + '\'' +
+                ", packageCost='" + packageCost + '\'' +
                 '}';
     }
 }
